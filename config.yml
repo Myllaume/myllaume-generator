@@ -3,6 +3,14 @@ export_path: C:/Users/desktop/
 
 site_name: Myllaume
 author: Guillaume Brioudes
-description: >
-  Je m'appelle Guillaume Brioudes, suis développeur web et étudiant en documentation numérique.
-  Je me sers de ce blog comme d'un carnet pour mes recherche en développement et architecture documentaire.
+description: Je m'appelle Guillaume Brioudes, suis développeur web et étudiant en
+  documentation numérique. Je me sers de ce blog comme d'un carnet pour mes recherche
+  en développement et architecture documentaire.
+
+categories:
+  - id: developpement
+    title: Développement
+    description: Je m'appelle Guillaume Brioudes et j'adore le développement et son architecture
+  -  id: documentation
+     title: Documentation
+     description: Je m'appelle Guillaume Brioudes et j''adore la documentation et son architecture

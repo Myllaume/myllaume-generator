@@ -13,5 +13,6 @@ header
     .raison-editoriale
             h2(class="ss-titre-site") Base de connaissance<br>Guillaume Brioudes
             ul(class="categories")
-                li Développement
-                li Documentation
+                each val in categories
+                    li
+                        a(href= pathBase + 'categories/' + val.id + '.html') #{val.title}

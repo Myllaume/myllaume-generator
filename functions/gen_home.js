@@ -4,12 +4,16 @@ const fs = require('fs')
 
 function genHome(library) {
     const htmlRender = pug.compileFile('template/home.pug')({
+        pathBase: './',
         title: 'Accueil site de Guillaume Brioudes',
         description: config.description,
         author: config.author,
         site_name: config.site_name,
         posts: library.posts.map(function(post) {
             return {id:post.meta.id , title: post.meta.title, categorie: post.meta.categorie}
+        }),
+        categories: config.categories.map(function(category) {
+            return {id:category.id , title: category.title}
         })
     })
 
