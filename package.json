@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Myllaume/myllaume-page-generator#readme",
   "dependencies": {
     "js-yaml": "^3.14.0",
-    "rimraf": "^3.0.2"
+    "pug": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "yaml-front-matter": "^4.1.0"
   }
 }
