@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%
+}
+
+@media (max-width:600px) {
+    html {
+        font-size: 55.5%
+    }
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../assets/fonts/EBGaramond-Italic.woff2) format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: auto
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../assets/fonts/EBGaramond-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../assets/fonts/EBGaramond-SemiBold.woff2) format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: auto
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../assets/fonts/EBGaramond-SemiBoldItalic.woff2) format("woff2");
+    font-weight: 600;
+    font-style: italic;
+    font-display: auto
+}
+
+@font-face {
+    font-family: Inconsolata;
+    src: url(../assets/fonts/Inconsolata-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto
+}
+
+@font-face {
+    font-family: Inconsolata;
+    src: url(../assets/fonts/Inconsolata-SemiBold.woff2) format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: auto
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "EB Garamond", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 3.6rem;
+    background: #fffff8;
+    cursor: default;
+    counter-reset: paragraph
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 5rem auto 0 auto;
+    padding: 0 10px
+}
+
+h1,
+h2,
+h3 {
+    margin: 6rem 0 2rem 0
+}
+
+h1 {
+    font-size: 7.2rem
+}
+
+h2 {
+    font-size: 5.4rem
+}
+
+h3 {
+    font-size: 3.8rem
+}
+
+.cat-title {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-size: 2.8rem
+}
+
+a {
+    color: #d44d3b
+}
+
+p {
+    position: relative
+}
+
+p::before {
+    position: absolute;
+    left: -80px;
+    counter-increment: paragraph;
+    opacity: .5;
+    content: "⁋ "counter(paragraph);
+    font-style: normal
+}
+
+a+a {
+    margin-left: 1rem
+}
+
+ul {
+    list-style: none
+}
+
+li {
+    position: relative;
+    line-height: 150%
+}
+
+li::before {
+    position: absolute;
+    left: -20px;
+    content: 'o';
+    font-size: 2rem
+}
+
+p code,
+pre {
+    margin: 0 2rem;
+    padding: .4rem 2rem
+}
+
+code,
+pre {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    background-color: #ffffe0;
+    border-radius: 2px;
+    overflow: auto;
+    font-size: 2.8rem;
+    line-height: 150%;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 3rem;
+    line-height: 150%
+}
+
+.fonti {
+    color: #d44d3b;
+    font-family: "EB Garamond", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: inherit;
+    font-style: italic
+}
+
+.identite-site {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap
+}
+
+.raison-editoriale {
+    display: flex;
+    justify-content: space-between
+}
+
+.titre-site {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-weight: 700;
+    font-size: 7.2rem;
+    margin: 0 3rem 0 0
+}
+
+.ss-titre-site {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 0
+}
+
+.legal {
+    font-size: 1.4rem;
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    margin: 1rem 0
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.categories::before {
+    content: 'Catégories';
+    font-size: 1.8rem;
+    font-family: Inconsolata, "Courier New", Courier, monospace
+}
+
+.categories li {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-size: 1.8rem;
+    line-height: 140%
+}
+
+.categories li::before {
+    content: '‒';
+    margin-right: .4rem
+}
+
+.main {
+    margin: 6rem 0
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-weight: 400;
+    border-top: 1px solid #000
+}
+
+.article__titre {
+    margin: 2.4rem 0;
+    font-size: 2.4rem
+}
+
+.article__categorie {
+    font-size: 1.4rem;
+    margin-right: 2rem
+}
+
+.retour {
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    font-size: 1.4rem
+}
+
+.retour::before {
+    content: '←';
+    margin: 1rem
+}
+
+.metadonnees {
+    list-style-type: none;
+    padding: 0;
+    margin: 6rem 0 0 0;
+    font-family: Inconsolata, "Courier New", Courier, monospace
+}
+
+.metadonnees li {
+    font-size: 2.8rem
+}
+
+.metadonnees__key {
+    font-weight: 600
+}
+
+.metadonnees li::before {
+    content: ''
+}
+
+.img-pied-page {
+    width: 100%;
+    opacity: .7
+}
+
+.devise {
+    font-size: 2.4rem;
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    margin: 1.2rem 0;
+    text-align: center
+}

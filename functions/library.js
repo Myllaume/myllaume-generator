@@ -37,3 +37,4 @@ let library = {
 
 require('./gen_home').genHome(library);
 require('./gen_category').genCategory(library);
+require('./gen_post').genPost(library);
