@@ -1,0 +1,23 @@
+{
+  "name": "myllaume-site-generator",
+  "version": "1.0.0",
+  "description": "Moteur Node.js pour générer les pages et outils de navigation de mon répertoire de documents en ligne. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myllaume/myllaume-page-generator.git"
+  },
+  "author": "Guillaume Brioudes <https://myllaume.fr/>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Myllaume/myllaume-page-generator/issues"
+  },
+  "homepage": "https://github.com/Myllaume/myllaume-page-generator#readme",
+  "dependencies": {
+    "js-yaml": "^3.14.0",
+    "rimraf": "^3.0.2"
+  }
+}
