@@ -1,8 +1,7 @@
 const fs = require('fs')
     , config = require('../app').config
     , path = require('path')
-    , yamlFrontmatter = require('yaml-front-matter')
-    , pug = require('pug');
+    , yamlFrontmatter = require('yaml-front-matter');
 
 let library = {
     tempFiles: fs.readdirSync(config.library_source, 'utf8'),
@@ -36,14 +35,4 @@ let library = {
     }
 })();
 
-const htmlRender = pug.compileFile('template/home.pug')({
-    title: 'toto',
-    description: 'lorem ipsum',
-    author: config.author,
-    site_name: config.site_name,
-    posts: library.posts.map(function(post) {
-        return {id:post.meta.id , title: post.meta.title, categorie: post.meta.categorie}
-    })
-})
-
-console.log(htmlRender)
+require('./gen_home').genHome(library);
