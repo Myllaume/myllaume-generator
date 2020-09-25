@@ -1,0 +1,13 @@
+doctype html
+html(lang='fr')
+    include head
+    body
+        .wrapper
+            include header
+
+            main
+                each val in posts
+                    article(class="article")
+                        h3(class="article__titre") #{val.title}
+                            a(href="/posts/" + val.id + ".html")
+                            span(class="article__categorie") #{val.categorie}
