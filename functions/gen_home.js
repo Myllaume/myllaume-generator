@@ -2,19 +2,17 @@ const fs = require('fs')
     , config = require('../app').config
     , pug = require('pug');
 
-function genHome(library) {
+function genHome(posts) {
     const htmlRender = pug.compileFile('template/home.pug')({
         pathBase: './',
         title: 'Accueil site de Guillaume Brioudes',
         description: config.description,
         author: config.author,
         site_name: config.site_name,
-        posts: library.posts.map(function(post) {
+        posts: posts.map(function(post) {
             return {id:post.meta.id , title: post.meta.title, categorie: post.meta.categorie}
         }),
-        categories: config.categories.map(function(category) {
-            return {id:category.id , title: category.title}
-        })
+        categories: config.categoriesList
     })
 
     fs.writeFile(config.build_dir + '/index.html', htmlRender, (err) => {

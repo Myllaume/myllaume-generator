@@ -13,23 +13,23 @@ const fs = require('fs')
         return '';
     }});
 
-function genPost(posts) {
+function genPage(pages) {
 
-    for (let post of posts) {
+    for (let page of pages) {
         const htmlRender = pug.compileFile('template/post.pug')({
-            pathBase: '../',
-            title: post.meta.title,
-            description: post.meta.description,
+            pathBase: './',
+            title: page.meta.title,
+            description: page.meta.description,
             author: config.author,
             site_name: config.site_name,
-            content: pckMarkdownIt.render(post.content),
+            content: pckMarkdownIt.render(page.content),
             categories: config.categoriesList
         })
 
-        fs.writeFile(config.build_dir + '/posts/' + post.meta.id + '.html', htmlRender, (err) => {
-            if (err) { console.error( 'Err. write post file: ' + err) }
+        fs.writeFile(config.build_dir + '/' + page.meta.id + '.html', htmlRender, (err) => {
+            if (err) { console.error( 'Err. write page file: ' + err) }
         });
     }
 }
 
-exports.genPost = genPost;
+exports.genPage = genPage;

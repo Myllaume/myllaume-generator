@@ -5,4 +5,11 @@ html(lang='fr')
         .wrapper
             include header
 
-            main !{content}
+            main
+                div
+                    a(
+                        class='retour'
+                        href= pathBase + 'index.html'
+                    ) Retour accueil
+
+                <h1>#{title}</h1> !{content}

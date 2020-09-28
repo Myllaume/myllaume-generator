@@ -2,9 +2,9 @@ const fs = require('fs')
     , config = require('../app').config
     , pug = require('pug');
 
-function genCategory(library) {
+function genCategory(posts) {
     for (let category of config.categories) {
-        const catPosts = library.posts
+        const catPosts = posts
             .filter(function(post) { return post.meta.categorie === category.id; })
             .map(function(post) { return {id: post.meta.id, title: post.meta.title}; })
 
@@ -22,9 +22,7 @@ function createPage(catMetas, catPosts) {
         posts: catPosts.map(function(post) {
             return {id:post.id , title: post.title, categorie: catMetas.title}
         }),
-        categories: config.categories.map(function(category) {
-            return {id:category.id , title: category.title}
-        })
+        categories: config.categoriesList
     })
 
     fs.writeFile(config.build_dir + '/categories/' + catMetas.id + '.html', htmlRender, (err) => {

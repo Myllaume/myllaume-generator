@@ -8,5 +8,11 @@ html(lang='fr')
             include header
 
             main
+                div
+                    a(
+                        class='retour'
+                        href= pathBase + 'index.html'
+                    ) Retour accueil
+
                 each val in posts
                     +post(val)

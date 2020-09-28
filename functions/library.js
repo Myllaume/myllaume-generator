@@ -6,7 +6,8 @@ const fs = require('fs')
 let library = {
     tempFiles: fs.readdirSync(config.library_source, 'utf8'),
     files: [],
-    posts: []
+    posts: [],
+    pages: []
 };
 
 (function() {
@@ -28,6 +29,15 @@ let library = {
         delete file.__content;
         const metas = file;
 
+        if (metas.type === 'page') {
+            library.pages.push({
+                meta: metas,
+                content: content
+            });
+
+            continue;
+        }
+
         library.posts.push({
             meta: metas,
             content: content
@@ -35,6 +45,7 @@ let library = {
     }
 })();
 
-require('./gen_home').genHome(library);
-require('./gen_category').genCategory(library);
-require('./gen_post').genPost(library);
+require('./gen_home').genHome(library.posts);
+require('./gen_category').genCategory(library.posts);
+require('./gen_post').genPost(library.posts);
+require('./gen_page').genPage(library.pages);
