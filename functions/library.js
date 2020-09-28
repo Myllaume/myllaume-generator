@@ -49,3 +49,5 @@ require('./gen_home').genHome(library.posts);
 require('./gen_category').genCategory(library.posts);
 require('./gen_post').genPost(library.posts);
 require('./gen_page').genPage(library.pages);
+
+require('./copydir').copyRecursiveSync('./assets', config.build_dir + '/assets');
