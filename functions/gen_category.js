@@ -16,6 +16,7 @@ function createPage(catMetas, catPosts) {
     const htmlRender = pug.compileFile('template/category.pug')({
         pathBase: '../',
         title: catMetas.title,
+        keyword: catMetas.keyword,
         description: catMetas.description,
         author: config.author,
         site_name: config.site_name,

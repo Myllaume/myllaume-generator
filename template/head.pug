@@ -20,6 +20,61 @@ head
         name="generator"
         content="https://github.com/Myllaume/myllaume-page-generator 0.1.0"
     )
+    //- Favicon
+    link(
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href= pathBase + "assets/favicon/apple-touch-icon.png"
+    )
+    link(
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href= pathBase + "assets/favicon/favicon-32x32.png"
+    )
+    link(
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href= pathBase + "assets/favicon/favicon-16x16.png"
+    )
+    link(
+        rel="manifest"
+        href= pathBase + "assets/favicon/site.webmanifest"
+    )
+    link(
+        rel="mask-icon"
+        href= pathBase + "assets/favicon/safari-pinned-tab.svg"
+        color="#5bbad5"
+    )
+    link(
+        rel="shortcut icon"
+        href= pathBase + "assets/favicon/favicon.ico"
+    )
+    meta(
+        name="apple-mobile-web-app-title"
+        content="Myllaume"
+    )
+    meta(
+        name="application-name"
+        content="Myllaume"
+    )
+    meta(
+        name="msapplication-TileColor"
+        content="#2b5797"
+    )
+    meta(
+        name="msapplication-config"
+        content= pathBase + "assets/favicon/browserconfig.xml"
+    )
+    meta(
+        name="theme-color"
+        content="#ffffff"
+    )
+    meta(
+        name="theme-color"
+        content="#37542F"
+    )
     //- OpenGraph
     meta(
         property="og:title"
@@ -36,6 +91,97 @@ head
     meta(
         property="og:site_name"
         content=sitename
+    )
+
+    if keyword
+        each val in keyword
+            meta(
+                property="article:tag"
+                content=val
+            )
+            meta(
+                property='itemprop="keywords"'
+                content=val
+            )
+
+    //- Twitter
+    meta(
+        name="twitter:card"
+        content="summary_large_image"
+    )
+    meta(
+        name="twitter:image"
+        content= pathBase + "assets/image/image-rs.jpg"
+    )
+    meta(
+        name="twitter:title"
+        content=title
+    )
+    meta(
+        name="twitter:description"
+        content=description
+    )
+    meta(
+        name="twitter:creator"
+        content="@guill_brioudes"
+    )
+    //- Itemprop
+    meta(
+        itemprop="name"
+        content=title
+    )
+    meta(
+        itemprop="description"
+        content=description
+    )
+    meta(
+        itemprop="datePublished"
+        content="2020-01-01"
+    )
+    meta(
+        itemprop="dateModified"
+        content="2020-01-01"
+    )
+    meta(
+        itemprop="image"
+        content= pathBase + "assets/image/image-rs.jpg"
+    )
+    //- Dublin Core
+    meta(
+        name="DC.Title"
+        content=title
+    )
+    meta(
+        name="DC.Creator"
+        content=author
+    )
+    meta(
+        name="DC.Subject"
+        content=title
+    )
+    meta(
+        name="DC.Description"
+        content=description
+    )
+    meta(
+        name="DC.Publisher"
+        content="https://myllaume.fr/"
+    )
+    meta(
+        name="DC.Date"
+        content="2020-01-01"
+    )
+    meta(
+        name="DC.Format"
+        content="text/html"
+    )
+    meta(
+        name="DC.Language"
+        content="fr"
+    )
+    meta(
+        name="DC.Rights"
+        content="CC BY-NC"
     )
 
     //- STYLE

@@ -19,6 +19,7 @@ function genPost(posts) {
         const htmlRender = pug.compileFile('template/post.pug')({
             pathBase: '../',
             title: post.meta.title,
+            keyword: post.meta.keyword,
             description: post.meta.description,
             author: config.author,
             site_name: config.site_name,

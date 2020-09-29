@@ -13,3 +13,11 @@ html(lang='fr')
                     ) Retour accueil
 
                 <h1>#{title}</h1> !{content}
+
+                ul(class='metadonnees')
+                    li <span class="metadonnees__key">mots-clés</span> : #{keyword.join(', ')}
+                    li <span class="metadonnees__key">mise en ligne</span> : 2020-01-01
+                    li <span class="metadonnees__key">dernière édition</span> : 2020-01-01
+                    li <span class="metadonnees__key">auteur</span> : #{author}
+
+            include footer

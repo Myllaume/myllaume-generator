@@ -6,6 +6,7 @@ function genHome(posts) {
     const htmlRender = pug.compileFile('template/home.pug')({
         pathBase: './',
         title: 'Accueil site de Guillaume Brioudes',
+        keyword: [],
         description: config.description,
         author: config.author,
         site_name: config.site_name,
