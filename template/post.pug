@@ -16,8 +16,8 @@ html(lang='fr')
 
                 ul(class='metadonnees')
                     li <span class="metadonnees__key">mots-clés</span> : #{keyword.join(', ')}
-                    li <span class="metadonnees__key">mise en ligne</span> : 2020-01-01
-                    li <span class="metadonnees__key">dernière édition</span> : 2020-01-01
+                    li <span class="metadonnees__key">mise en ligne</span> : #{date_publish}
+                    li <span class="metadonnees__key">dernière édition</span> : #{date_update}
                     li <span class="metadonnees__key">auteur</span> : #{author}
 
             include footer

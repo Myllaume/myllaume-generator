@@ -134,14 +134,19 @@ head
         itemprop="description"
         content=description
     )
-    meta(
-        itemprop="datePublished"
-        content="2020-01-01"
-    )
-    meta(
-        itemprop="dateModified"
-        content="2020-01-01"
-    )
+    if date_publish
+        meta(
+            itemprop="datePublished"
+            content=date_publish
+        )
+        meta(
+            itemprop="dateModified"
+            content=date_update
+        )
+        meta(
+            name="DC.Date"
+            content=date_publish
+        )
     meta(
         itemprop="image"
         content= pathBase + "assets/image/image-rs.jpg"
@@ -166,10 +171,6 @@ head
     meta(
         name="DC.Publisher"
         content="https://myllaume.fr/"
-    )
-    meta(
-        name="DC.Date"
-        content="2020-01-01"
     )
     meta(
         name="DC.Format"

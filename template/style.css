@@ -66,7 +66,6 @@ body {
     font-size: 3.6rem;
     background: #fffff8;
     cursor: default;
-    counter-reset: paragraph
 }
 
 .wrapper {
@@ -106,15 +105,6 @@ p {
     position: relative
 }
 
-p::before {
-    position: absolute;
-    left: -80px;
-    counter-increment: paragraph;
-    opacity: .5;
-    content: "⁋ "counter(paragraph);
-    font-style: normal
-}
-
 a+a {
     margin-left: 1rem
 }
@@ -128,7 +118,7 @@ li {
     line-height: 150%
 }
 
-li::before {
+ul li::before {
     position: absolute;
     left: -20px;
     content: 'o';

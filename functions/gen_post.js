@@ -11,7 +11,7 @@ const fs = require('fs')
         }
 
         return '';
-    }});
+    }}).use(require('markdown-it-footnote'));
 
 function genPost(posts) {
 
@@ -19,6 +19,8 @@ function genPost(posts) {
         const htmlRender = pug.compileFile('template/post.pug')({
             pathBase: '../',
             title: post.meta.title,
+            date_publish: post.meta.date_publish,
+            date_update: (post.meta.date_update || post.meta.date_publish),
             keyword: post.meta.keyword,
             description: post.meta.description,
             author: config.author,
